@@ -28,8 +28,6 @@ class Todo extends Model
 
         $db = resolve('db');
         $db->prepare('select * from todos order by ' . $sort . ' ' . $order . $limit);
-        $db->bindValue(':ttt', $sort);
-        $db->bindValue(':sort', $sort); 
 
         $db->execute();
         $result = $db->fetchAllAssociative();
