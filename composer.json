@@ -1,0 +1,20 @@
+{
+    "name": "vamcart/todo",
+    "description": "Тестовое задание",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexander Menovchicov",
+            "email": "vamshop@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "voku/pagination": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
