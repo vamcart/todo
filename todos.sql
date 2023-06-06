@@ -10,7 +10,7 @@ CREATE TABLE `todos` (
   `email` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'Ожидает проверки',
-  `edited` int(2) NOT NULL,
+  `edited` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
