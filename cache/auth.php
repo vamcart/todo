@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php echo htmlentities(config('name')) ?></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link rel="stylesheet" href="<?php echo htmlentities(url('/css/app.css')) ?>">
+    </head>
+    <body>
+        <div class="container">
+                <h1>Вход</q></h1>
+            
+            <div class="panel">
+                <a class="btn" href="<?php echo htmlentities(url('/')) ?>">Вернуться к списку задач</a>
+            </div>
+
+
+            <?php if (session()->hasFlash('errors')): ?>
+            <ul class="msg msg-error">
+                <?php foreach (session()->flash('errors') as $error): ?>
+                    <li><?php echo htmlentities($error) ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+
+            <form action="<?php echo htmlentities(route('user.login')) ?>" method="post">
+                <div class="form-group">
+                    <label>Логин</label>
+                    <input type="text" name="login" value="" required>
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" name="password" value="" required>
+                </div>
+                <button class="btn primary" type="submit">Войти</button>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="<?php echo htmlentities(url('/js/app.js')) ?>" charset="utf-8"></script>        
+    </body>
+</html>
